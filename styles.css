@@ -130,6 +130,17 @@ body {
     margin-bottom: 1rem;
 }
 
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 1rem 0;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
 /* Services Section */
 .services {
     padding: 8rem 10% 5rem;
