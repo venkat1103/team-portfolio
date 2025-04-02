@@ -1,12 +1,16 @@
 /* Theme Variables */
 :root {
     --bg-primary: #ffffff;
-    --bg-secondary: #f9f9f9;
+    --bg-secondary: #f8f9fa;
     --text-primary: #2c3e50;
     --text-secondary: #666;
     --card-bg: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --border-color: #eee;
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+    --gradient-start: #3498db;
+    --gradient-end: #2980b9;
 }
 
 [data-theme="dark"] {
@@ -17,6 +21,10 @@
     --card-bg: #1e1e1e;
     --shadow-color: rgba(0, 0, 0, 0.5);
     --border-color: #333333;
+    --accent-color: #00b4ff;
+    --accent-hover: #0099ff;
+    --gradient-start: #00b4ff;
+    --gradient-end: #0099ff;
 }
 
 /* Theme Toggle Switch */
@@ -87,8 +95,9 @@ body {
 }
 
 .navbar {
-    background-color: var(--bg-primary);
-    box-shadow: 0 2px 10px var(--shadow-color);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-card, .team-member, .rating-card, .contact-form, .error-content {
@@ -135,6 +144,94 @@ p {
     border-top-color: var(--border-color);
 }
 
+/* Light theme specific enhancements */
+.service-card, .team-member, .rating-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.service-card:hover, .team-member:hover, .rating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i, .team-member i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover i, .team-member:hover i {
+    transform: scale(1.1);
+}
+
+.cta-button, .submit-btn {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover, .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-card {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+}
+
+.rating-card .stars i {
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
 /* Additional dark mode specific styles */
 [data-theme="dark"] .service-card:hover,
 [data-theme="dark"] .team-member:hover {
@@ -146,25 +243,17 @@ p {
 }
 
 [data-theme="dark"] .nav-links a:hover {
-    color: #00b4ff;
+    color: var(--accent-color);
 }
 
-[data-theme="dark"] .cta-button {
-    background-color: #00b4ff;
-    color: white;
-}
-
-[data-theme="dark"] .cta-button:hover {
-    background-color: #0099ff;
-}
-
+[data-theme="dark"] .cta-button,
 [data-theme="dark"] .submit-btn {
-    background-color: #00b4ff;
-    color: white;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 }
 
+[data-theme="dark"] .cta-button:hover,
 [data-theme="dark"] .submit-btn:hover {
-    background-color: #0099ff;
+    background: linear-gradient(135deg, var(--gradient-hover), var(--gradient-hover));
 }
 
 [data-theme="dark"] .social-links a {
@@ -172,11 +261,11 @@ p {
 }
 
 [data-theme="dark"] .social-links a:hover {
-    color: #00b4ff;
+    color: var(--accent-color);
 }
 
 [data-theme="dark"] .info-item i {
-    color: #00b4ff;
+    color: var(--accent-color);
 }
 
 [data-theme="dark"] .stars i {
