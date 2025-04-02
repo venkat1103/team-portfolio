@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Team Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Team Portfolio</a>
+        </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="service-header" id="services">
+        <h1>Our Services</h1>
+        <p>We offer comprehensive solutions tailored to your needs</p>
+    </header>
+
+    <section id="web-development" class="service-section">
+        <div class="service-container">
+            <h2>Web Development</h2>
+            <p class="description">Custom web solutions built with modern technologies and best practices</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-code service-icon"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Modern, responsive websites using the latest frameworks and technologies.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-server service-icon"></i>
+                    <h3>Backend Development</h3>
+                    <p>Robust server-side solutions with secure and scalable architecture.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-database service-icon"></i>
+                    <h3>Database Integration</h3>
+                    <p>Efficient data management and storage solutions for your applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mobile-development" class="service-section">
+        <div class="service-container">
+            <h2>Mobile App Development</h2>
+            <p class="description">Native and cross-platform mobile applications for iOS and Android</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fab fa-apple service-icon"></i>
+                    <h3>iOS Development</h3>
+                    <p>Native iOS applications with smooth performance and elegant design.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fab fa-android service-icon"></i>
+                    <h3>Android Development</h3>
+                    <p>Feature-rich Android apps following Material Design principles.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <h3>Cross-Platform Apps</h3>
+                    <p>Efficient solutions that work seamlessly across multiple platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-chatbot" class="service-section">
+        <div class="service-container">
+            <h2>AI Chatbot Development</h2>
+            <p class="description">Intelligent conversational agents powered by advanced AI technology</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-robot service-icon"></i>
+                    <h3>Custom Chatbots</h3>
+                    <p>Tailored AI solutions for your specific business needs.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-brain service-icon"></i>
+                    <h3>Natural Language Processing</h3>
+                    <p>Advanced NLP capabilities for human-like interactions.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cogs service-icon"></i>
+                    <h3>Integration Services</h3>
+                    <p>Seamless integration with your existing platforms and systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <h2>Our Development Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Strategy</h3>
+                    <p>Planning and requirement analysis</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Design</h3>
+                    <p>UI/UX design and prototyping</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Development</h3>
+                    <p>Coding and implementation</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Testing & Launch</h3>
+                    <p>Quality assurance and deployment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@teamportfolio.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Team Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
