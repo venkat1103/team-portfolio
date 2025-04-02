@@ -42,16 +42,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
+// Contact Form Submission
+document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formStatus = document.getElementById('formStatus');
+    const submitButton = this.querySelector('button[type="submit"]');
+    
+    // Get form values
+    const name = this.querySelector('#name').value;
+    const email = this.querySelector('#email').value;
+    const message = this.querySelector('#message').value;
+    
+    try {
+        // Disable submit button while processing
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        
+        // Store in Firebase
+        await db.collection('messages').add({
+            name: name,
+            email: email,
+            message: message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        
+        // Show success message
+        formStatus.textContent = 'Message sent successfully!';
+        formStatus.className = 'form-status success';
+        
+        // Clear form
+        this.reset();
+        
+    } catch (error) {
+        console.error('Error sending message:', error);
+        formStatus.textContent = 'Error sending message. Please try again.';
+        formStatus.className = 'form-status error';
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+        
+        // Hide status message after 5 seconds
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
+});
 
 // Add scroll reveal animations
 window.addEventListener('scroll', () => {

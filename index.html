@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -169,16 +172,17 @@
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
         <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
+            <form class="contact-form" id="contactForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <div id="formStatus" class="form-status"></div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
             <div class="contact-info">
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <p>email@example.com</p>
+                    <p>info@teamportfolio.com</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
@@ -201,5 +205,21 @@
 
     <script src="script.js"></script>
     <script src="theme.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC4rF__--xCkMNzp89EWYibQQhXstlDXtI",
+            authDomain: "team-portfolio-da966.firebaseapp.com",
+            projectId: "team-portfolio-da966",
+            storageBucket: "team-portfolio-da966.firebasestorage.app",
+            messagingSenderId: "258119392366",
+            appId: "1:258119392366:web:bca874efb3da69298fda7f",
+            measurementId: "G-48PJNJJ5YY"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
 </body>
 </html> 
