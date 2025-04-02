@@ -10,13 +10,13 @@
 }
 
 [data-theme="dark"] {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
     --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --card-bg: #2d2d2d;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --border-color: #404040;
+    --text-secondary: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --border-color: #333333;
 }
 
 /* Theme Toggle Switch */
@@ -45,7 +45,7 @@
 }
 
 .slider {
-    background-color: #ccc;
+    background-color: #666;
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -84,11 +84,13 @@ body {
 
 .navbar {
     background-color: var(--bg-primary);
+    box-shadow: 0 2px 10px var(--shadow-color);
 }
 
 .service-card, .team-member, .rating-card, .contact-form, .error-content {
     background-color: var(--card-bg);
     box-shadow: 0 3px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
 }
 
 h1, h2, h3 {
@@ -102,9 +104,62 @@ p {
 .contact-form input, .contact-form textarea {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-    border-color: var(--border-color);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
 }
 
 .error-details {
     border-top-color: var(--border-color);
+}
+
+/* Additional dark mode specific styles */
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .team-member:hover {
+    background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: #3498db;
+}
+
+[data-theme="dark"] .cta-button {
+    background-color: #3498db;
+    color: white;
+}
+
+[data-theme="dark"] .cta-button:hover {
+    background-color: #2980b9;
+}
+
+[data-theme="dark"] .submit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+[data-theme="dark"] .submit-btn:hover {
+    background-color: #2980b9;
+}
+
+[data-theme="dark"] .social-links a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    color: #3498db;
+}
+
+[data-theme="dark"] .info-item i {
+    color: #3498db;
+}
+
+[data-theme="dark"] .stars i {
+    color: #ffd700;
 } 
