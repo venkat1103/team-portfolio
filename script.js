@@ -43,29 +43,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Contact Form Submission
-document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const formStatus = document.getElementById('formStatus');
     const submitButton = this.querySelector('button[type="submit"]');
     
     // Get form values
-    const name = this.querySelector('#name').value;
-    const email = this.querySelector('#email').value;
-    const message = this.querySelector('#message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Show form status element
+    formStatus.style.display = 'block';
+    formStatus.textContent = 'Sending message...';
+    formStatus.className = 'form-status';
     
     try {
+        // Validate inputs
+        if (!name || !email || !message) {
+            throw new Error('Please fill in all fields');
+        }
+        
         // Disable submit button while processing
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
         
-        // Store in Firebase
-        await db.collection('messages').add({
+        // Log for debugging
+        console.log('Attempting to send message to Firebase...');
+        
+        // Create message object
+        const messageData = {
             name: name,
             email: email,
             message: message,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
+            timestamp: new Date().toISOString(),
+            createdAt: new Date()
+        };
+        
+        console.log('Message data:', messageData);
+        
+        // Verify Firebase is initialized
+        if (!window.db || !window.collection || !window.addDoc) {
+            throw new Error('Firebase is not properly initialized');
+        }
+        
+        // Store in Firebase
+        const messagesRef = window.collection(window.db, 'messages');
+        console.log('Collection reference created');
+        
+        const docRef = await window.addDoc(messagesRef, messageData);
+        console.log('Document written with ID:', docRef.id);
         
         // Show success message
         formStatus.textContent = 'Message sent successfully!';
@@ -75,8 +103,19 @@ document.querySelector('.contact-form').addEventListener('submit', async functio
         this.reset();
         
     } catch (error) {
-        console.error('Error sending message:', error);
-        formStatus.textContent = 'Error sending message. Please try again.';
+        console.error('Detailed error:', error);
+        
+        // Show user-friendly error message
+        let errorMessage = 'Error sending message. ';
+        if (error.code === 'permission-denied') {
+            errorMessage += 'Permission denied. Please try again later.';
+        } else if (error.message) {
+            errorMessage += error.message;
+        } else {
+            errorMessage += 'Please try again.';
+        }
+        
+        formStatus.textContent = errorMessage;
         formStatus.className = 'form-status error';
     } finally {
         // Re-enable submit button

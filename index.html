@@ -8,8 +8,45 @@
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc,
+            connectFirestoreEmulator 
+        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC4rF__--xCkMNzp89EWYibQQhXstlDXtI",
+            authDomain: "team-portfolio-da966.firebaseapp.com",
+            projectId: "team-portfolio-da966",
+            storageBucket: "team-portfolio-da966.appspot.com",
+            messagingSenderId: "258119392366",
+            appId: "1:258119392366:web:bca874efb3da69298fda7f"
+        };
+
+        try {
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            // Test database connection
+            const testCollection = collection(db, 'messages');
+            console.log('Firestore connection established:', testCollection.id);
+
+            // Make Firebase functions available globally
+            window.db = db;
+            window.collection = collection;
+            window.addDoc = addDoc;
+            
+            console.log('Firebase initialized successfully');
+        } catch (error) {
+            console.error('Error initializing Firebase:', error);
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -205,21 +242,5 @@
 
     <script src="script.js"></script>
     <script src="theme.js"></script>
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyC4rF__--xCkMNzp89EWYibQQhXstlDXtI",
-            authDomain: "team-portfolio-da966.firebaseapp.com",
-            projectId: "team-portfolio-da966",
-            storageBucket: "team-portfolio-da966.firebasestorage.app",
-            messagingSenderId: "258119392366",
-            appId: "1:258119392366:web:bca874efb3da69298fda7f",
-            measurementId: "G-48PJNJJ5YY"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-    </script>
 </body>
 </html> 
