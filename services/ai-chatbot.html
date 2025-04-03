@@ -6,7 +6,102 @@
     <title>AI Chatbot Development - Team Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .service-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .service-header {
+            margin-bottom: 60px;
+        }
+
+        .service-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .service-header p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .features {
+            margin-bottom: 60px;
+        }
+
+        .feature-item {
+            margin-bottom: 40px;
+        }
+
+        .feature-item h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .development-process {
+            background: #f8f9fa;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .process-header {
+            margin-bottom: 40px;
+        }
+
+        .process-header h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -26,77 +121,60 @@
         </div>
     </nav>
 
-    <!-- Service Detail -->
-    <div class="service-detail">
-        <h1>AI Chatbot Development</h1>
-        <p>Intelligent conversational agents powered by advanced AI technology</p>
+    <div class="service-page">
+        <div class="service-header">
+            <h1>AI Chatbot Development</h1>
+            <p>Intelligent conversational agents powered by advanced AI technology</p>
+        </div>
 
-        <div class="service-features">
-            <h2>Our Chatbot Solutions</h2>
-            
+        <div class="features">
             <div class="feature-item">
-                <h3>Custom Chatbots</h3>
-                <p>Tailored AI solutions for your specific business needs, designed to enhance customer engagement and automate support processes.</p>
+                <h2>Custom Chatbots</h2>
+                <p>Tailored AI solutions for your specific business needs.</p>
             </div>
 
             <div class="feature-item">
-                <h3>Natural Language Processing</h3>
-                <p>Advanced NLP capabilities for human-like interactions, ensuring your chatbot understands and responds naturally to user queries.</p>
+                <h2>Natural Language Processing</h2>
+                <p>Advanced NLP capabilities for human-like interactions.</p>
             </div>
 
             <div class="feature-item">
-                <h3>Integration Services</h3>
-                <p>Seamless integration with your existing platforms and systems, including CRM, help desk, and messaging platforms.</p>
+                <h2>Integration Services</h2>
+                <p>Seamless integration with your existing platforms and systems.</p>
             </div>
         </div>
 
         <div class="development-process">
-            <h2>Our Development Process</h2>
+            <div class="process-container">
+                <div class="process-header">
+                    <h2>Our Development Process</h2>
+                </div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Strategy</h3>
+                        <p>Planning and requirement analysis</p>
+                    </div>
 
-            <div class="process-step">
-                <div class="step-number">01</div>
-                <div class="step-content">
-                    <h3>Strategy</h3>
-                    <p>Planning and requirement analysis to understand your specific needs and goals.</p>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Design</h3>
+                        <p>UI/UX design and prototyping</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Development</h3>
+                        <p>Coding and implementation</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Testing</h3>
+                        <p>Quality assurance and deployment</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="process-step">
-                <div class="step-number">02</div>
-                <div class="step-content">
-                    <h3>Design</h3>
-                    <p>UI/UX design and prototyping to create an intuitive chatbot interface.</p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">03</div>
-                <div class="step-content">
-                    <h3>Development</h3>
-                    <p>Coding and implementation of the chatbot with advanced AI capabilities.</p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">04</div>
-                <div class="step-content">
-                    <h3>Testing & Training</h3>
-                    <p>Rigorous testing and AI model training to ensure optimal performance.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Consultation Form -->
-        <div class="consultation-form">
-            <h2>Schedule a Free Consultation</h2>
-            <p>Let's discuss how our chatbot solutions can benefit your business</p>
-            <form id="consultationForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <input type="tel" id="phone" placeholder="Your Phone Number" required>
-                <input type="datetime-local" id="datetime" required>
-                <button type="submit">Book Free Call</button>
-            </form>
         </div>
     </div>
 
