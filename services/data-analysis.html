@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis & ML Models - Team Portfolio</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Service Section Styles */
+        .service-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .service-header {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .service-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .service-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        /* Process Section */
+        .process-section {
+            margin-top: 60px;
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .process-section h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            margin-top: 60px;
+        }
+
+        /* Back to Home Button */
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Team Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#testimonials">Testimonials</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="../index.html" class="back-button">← Back to Home</a>
+
+    <section class="service-section">
+        <div class="service-header">
+            <h1>Data Analysis & ML Models</h1>
+            <p>Transform your data into powerful predictive insights</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <div class="service-icon">📊</div>
+                <h3>Exploratory Data Analysis</h3>
+                <p>Comprehensive analysis of your data to uncover patterns, trends, and valuable insights.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">⚙️</div>
+                <h3>Feature Engineering</h3>
+                <p>Advanced feature extraction and optimization to enhance model performance.</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-icon">🤖</div>
+                <h3>Machine Learning Models</h3>
+                <p>Custom ML models tailored to your specific business needs and objectives.</p>
+            </div>
+        </div>
+
+        <div class="process-section">
+            <div class="process-container">
+                <h2>Our Data Science Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-title">Data Collection</div>
+                        <div class="step-description">Gathering and organizing relevant data sources</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-title">Data Preprocessing</div>
+                        <div class="step-description">Cleaning and preparing data for analysis</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-title">Model Development</div>
+                        <div class="step-description">Building and training ML models</div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-title">Deployment & Monitoring</div>
+                        <div class="step-description">Implementing models and tracking performance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Team Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
